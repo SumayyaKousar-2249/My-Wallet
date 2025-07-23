@@ -1,0 +1,40 @@
+Finance-Tracker-Project.Readme
+------------------------------
+1. create schema/db  for ExpenseTracker using "CREATE SCHEMA `expensetracker` ;"  if not available else drop schema and create new one. if facing issues
+
+and replace password with your Db password "spring.datasource.password=password@123" in application.properties .
+and replace " spring.mail.username=your mail id " and " spring.mail.password= app password " create using gogle app passwords.
+
+2.Run Backend in SpringbootSuite/eclipse .Check tables are created in Db by "use expensetracker" and "Show tables".
+
+3.if tables exist then create an admin for application using 
+
+" INSERT INTO `expensetracker`.`users`
+(`id`,
+`email`,
+`enabled`,
+`password`,
+`profile_img_url`,
+`username`,
+`verification_code`,
+`verification_code_expiry_time`)
+VALUES
+(1,'admin@gmail.com',1,'12345678','','admin','',null); "
+ 
+
+and map user to admin using
+
+
+" INSERT INTO `expensetracker`.`user_roles`
+(`user_id`,
+`role_id`)
+VALUES
+(1,2); "
+
+4.Login with Admin and wait for 10 min for data seeder to create expense and income data in DB, then Logout.
+
+5.Now create an register an user with valid mail id for otp. and verify using otp.
+
+6.Now you are able to add transactions in user and manage your transaction and user from admin. 
+
+
